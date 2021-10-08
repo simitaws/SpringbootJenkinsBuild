@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Compile and Clean') { 
             steps {
-                sh "sudo systemctl restart docker"
+                sh "systemctl restart docker"
                 sh "mvn clean compile"
             }
         }
