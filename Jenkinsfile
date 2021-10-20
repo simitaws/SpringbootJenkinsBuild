@@ -26,6 +26,10 @@
 	        stage('Functional Testing'){
 	            steps {
 	               echo "test"
+			    git 'https://github.com/simitaws/Selenium-Course.git'
+			    script {
+				    sh(/mvn clean test/)
+			    }
 	                sleep 4
 	            }
 	        }
