@@ -1,6 +1,13 @@
 	pipeline {
 	    agent any 
 		stages {
+	stage('build') {
+      cmd_exec('echo "Buils starting..."')
+}
+
+def cmd_exec(command) {
+    return bat(returnStdout: true, script: "${command}").trim()
+}
 	        stage('Functional Testing'){
 	            steps {
 	               echo "test"
