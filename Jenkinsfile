@@ -6,7 +6,7 @@
 	               echo "test"
 			    git 'https://github.com/simitaws/Selenium-Course.git'
 			    script {
-				    sh(/mvn clean test/)
+				    bat(/mvn clean test/)
 			    }
 	                sleep 4
 	            }
