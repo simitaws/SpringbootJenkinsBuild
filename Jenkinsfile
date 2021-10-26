@@ -1,14 +1,14 @@
 pipeline {
     agent any 
     stages {
-        stage('Compile and Build') { 
+        stage('Compile and Build -- Maven') { 
             steps {
                 bat "mvn clean compile"
             }
         }
        
 
-        stage('Deploy to Dev') { 
+        stage('Deploy to Dev -- Docker') { 
             steps {
                 bat "mvn package"
                 bat "docker build -t  icatdocker/docker_jenkins_springboot:${BUILD_NUMBER} ."
@@ -21,7 +21,7 @@ pipeline {
         }
     }
 
- 	 stage('Functional Testing'){
+ 	 stage('Functional Testing -- Selenium'){
 	  steps {
 	         echo "test"
                  git 'https://github.com/simitaws/Selenium-Course.git'
@@ -31,7 +31,7 @@ pipeline {
 	            }
 	        }
 
-           stage(' Security Testing'){
+           stage(' Security Testing -- SonarQube'){
             steps {
                 echo "test"
                 sleep 5
