@@ -16,7 +16,7 @@ pipeline {
                 bat "docker login -u icatdocker -p ${Dockerpwd}"
                 bat "docker push icatdocker/docker_jenkins_springboot:${BUILD_NUMBER}"
 	        bat "docker rm -f jenkinsci"
-                bat "docker run --name jenkinsci -itd -p  8081:8080 icatdocker/docker_jenkins_springboot:${BUILD_NUMBER} ."
+                bat "docker run --name jenkinsci -itd -p  192.168.1.1.8081:8080 icatdocker/docker_jenkins_springboot:${BUILD_NUMBER} ."
             }
         }
     }
