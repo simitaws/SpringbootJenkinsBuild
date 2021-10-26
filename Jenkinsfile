@@ -38,14 +38,14 @@ pipeline {
             }
         }
         
-        stage('Deploy to UAT'){
+        stage('Deploy to UAT  (Docker)'){
             steps {
              echo "test"
             }
         }
 
         
-        stage('Archving') { 
+        stage('Archiving') { 
             steps {
 //                 archiveArtifacts '**/target/*.jar'
 		    sleep 2
