@@ -7,7 +7,7 @@ pipeline {
             }
         }
        
-            input "Do you want to deplpy"
+          
         stage('Deploy to Dev   (Docker)') { 
             steps {
                 bat "mvn package"
