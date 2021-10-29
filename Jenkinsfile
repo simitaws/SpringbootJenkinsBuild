@@ -9,9 +9,7 @@ pipeline {
        
           
         stage('Deploy to Dev   (Docker)') { 
-		input {
-			message "Do you want to Proceed or Abort the deployment"
-		}
+
             steps {
                 bat "mvn package"
                 bat "docker build -t  icatdocker/docker_jenkins_springboot:${BUILD_NUMBER} ."
