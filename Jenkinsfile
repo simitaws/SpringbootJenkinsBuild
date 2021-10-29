@@ -10,7 +10,7 @@ pipeline {
           
         stage('Deploy to Dev   (Docker)') { 
 		input {
-			message "Want to Deploy"
+			message "Do you want to Proceed or Abort the deployment"
 		}
             steps {
                 bat "mvn package"
