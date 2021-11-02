@@ -9,7 +9,9 @@ pipeline {
 	    
         stage('Email Notofication') { 
           steps {
-                
+          mail bcc: '', body: '''Hello,
+
+Please     approve / reject CI/CD Pipeline.''', cc: 'chris.welland@icatalystinc.com', from: '', replyTo: '', subject: 'Pl Approve / Reject the release in CI?CD Pipeline', to: 'simit@icatalystinc.com'
             }
         }
        
