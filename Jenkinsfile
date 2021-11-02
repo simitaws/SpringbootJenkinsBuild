@@ -6,6 +6,12 @@ pipeline {
                 bat "mvn clean compile"
             }
         }
+	    
+        stage('Email Notofication') { 
+          steps {
+                
+            }
+        }
        
           
         stage('Deploy to Dev   (Docker)') { 
