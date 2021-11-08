@@ -6,14 +6,13 @@ pipeline {
                 bat "mvn clean compile"
             }
         }
-	    
-        stage('Email Notofication') { 
-          steps {
-          mail bcc: '', body: '''Hello,
-
-Please     approve / reject CI/CD Pipeline.''', cc: 'chris.welland@icatalystinc.com', from: '', replyTo: '', subject: 'Pl Approve / Reject the release in CI?CD Pipeline', to: 'simit@icatalystinc.com'
-            }
-        }
+        stage(' Security Testing (SonarQube)'){
+            steps {
+	withSonarQubeEnv('SonarQube') {
+		bat "mvn sonar:sonar -Dsonar.login=cfb1a2c3b5624f88fc689d4027cb1e564f463039"
+		}
+	    }
+	}
        
           
         stage('Deploy to Dev   (Docker)') { 
