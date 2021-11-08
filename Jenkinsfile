@@ -9,7 +9,7 @@ pipeline {
         stage(' Security Testing (SonarQube)'){
             steps {
 	withSonarQubeEnv('SonarQube') {
-		bat "mvn sonar:sonar"
+		bat "mvn sonar:sonar -Dsonar.login=cfb1a2c3b5624f88fc689d4027cb1e564f463039"
 		}
 	    }
 	}
