@@ -66,6 +66,21 @@ pipeline {
             }
         }
 
+	 stage('Email Notofication to Release Manager') { 
+          steps {
+          mail bcc: '', body: '''Hello,
+          Please     approve / reject CI/CD Pipeline.''', cc: 'chris.welland@icatalystinc.com', from: '', replyTo: '', subject: 'Pl Approve / Reject the release in CI/CD Pipeline', to: 'simit@icatalystinc.com'
+            }
+        }
+	    stage('Approval by Release Manager'){
+	      input {
+			message "Proceed (If ERB Decision Memo Approved Go Live)"
+		}
+            steps {
+		    sleep 2
+	    }
+	    }
+	    
          stage('Deploy to Prod  (Docker)'){
             steps {
              echo "UAT Deployment in Progress"
