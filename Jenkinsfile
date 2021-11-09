@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Compile and Build  (Maven)') { 
             steps {
+		git 'https://github.com/cwelland1/SpringbootJenkinsBuild.git'
                 bat "mvn clean compile"
             }
         }
