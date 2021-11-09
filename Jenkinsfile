@@ -42,7 +42,7 @@ pipeline {
 	    }
 	}
        
-        stage("Quality Gate (SonarQube)") {
+        stage("Security Quality Gate (SonarQube)") {
 
           steps {
 		  timeout(time: 3, unit: 'MINUTES') {
