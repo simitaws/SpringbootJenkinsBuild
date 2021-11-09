@@ -51,12 +51,6 @@ pipeline {
 	            }
 	        }
 
-           stage(' Security Testing  (SonarQube)'){
-            steps {
-                echo "test"
-                sleep 5
-            }
-        }
         
         stage('Deploy to UAT  (Docker)'){
             steps {
