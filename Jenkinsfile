@@ -11,7 +11,7 @@ pipeline {
 	 git 'https://github.com/cwelland1/SpringbootJenkinsBuild.git'
 	withSonarQubeEnv('SonarQube') {
 		bat "mvn clean package sonar:sonar -Dsonar.login=cfb1a2c3b5624f88fc689d4027cb1e564f463039"
-		sleep 10
+		sleep 5
 		}
 	    }
 	}
