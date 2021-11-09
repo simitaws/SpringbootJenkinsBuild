@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        stage('Compile and Build Test  (Maven)') { 
+        stage('Compile and Build  (Maven)') { 
             steps {
                 bat "mvn clean compile"
             }
