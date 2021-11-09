@@ -68,8 +68,14 @@ pipeline {
 
 	 stage('Email Notofication to Release Manager') { 
           steps {
-          mail bcc: '', body: '''Hello,
-          Please     approve / reject CI/CD Pipeline.''', cc: 'chris.welland@icatalystinc.com', from: '', replyTo: '', subject: 'Pl Approve / Reject the release in CI/CD Pipeline', to: 'simit@icatalystinc.com'
+          mail bcc: '', body: '''Good day Release Manager, 
+
+This email is to notify you that there is a software release package that is awaiting your review. 
+
+Please note that the software package has been tested for Security and Functional compliance and passed. You should also have received a copy of the ERB Approval Decision Memo from the EPMR Automation Tool auto-notification system.
+
+If you have any additional questions please contact the EMPO Project Liaison at <ocioepmb@ed.gov>
+''', cc: 'chris.welland@icatalystinc.com', from: '', replyTo: '', subject: 'Release Manager Notification: A Release Package awaits your review', to: 'simit@icatalystinc.com'
             }
         }
 	    stage('Approval by Release Manager'){
