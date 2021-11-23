@@ -44,7 +44,7 @@ pipeline {
  	 stage('Functional Testing   (Selenium)'){
 	  steps {
 	         echo "test"
-                 git 'https://github.com/simitaws/Selenium-Course.git'
+                 git 'https://github.com/cwelland1/Selenium-Course.git'
 	         script {
 		        bat(/mvn clean test/)
 			    }
